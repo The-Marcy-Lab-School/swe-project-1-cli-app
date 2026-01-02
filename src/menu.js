@@ -24,11 +24,26 @@ class Menu {
                 const itemPrice = prompt(`Enter price per item: `)
                 const newItem = new Item(itemName, itemNum, itemPrice)
                 this.list.push(newItem)
-                newItem.addItem
+                newItem.addItem()
             } else if (menuChoice === '2') {
-                const RemoveItem = prompt('Enter item name to remove: ');
-                const RemoveItemNum = prompt(`Enter quantity to remove: `)
-                // removeItem()
+                while (menuChoice === '2') {
+                    const removeItemName = prompt('Enter item name to remove: ');
+                    const removedItem = this.list.find(item => item.name === removeItemName)
+                    if (!removedItem) {
+                        console.log(`invalid item name. Please try again.`)
+                        break;
+                    }
+                    const removeItemNum = prompt(`Enter quantity to remove: `);
+                    if (removeItemNum >= removedItem.quantity) {
+                        console.log(`removed all ${removedItem.name} from your shopping list!`)
+                        this.list.splice(this.list.indexOf(removedItem), 1)
+                        break;
+                    } else {
+                        console.log(`removed ${removeItemNum} ${removedItem.name} from your shopping list!`)
+                        removedItem.removeItem(removeItemNum)
+                        break;
+                    }
+                }
             } else if (menuChoice === '3') {
                 // viewList();;
             } else if (menuChoice === '4') {
@@ -40,9 +55,6 @@ class Menu {
             prompt('\nPress Enter to continue...');
             console.clear();
         }
-    }
-    viewList() {
-        // show all items in itemList by using forEach console log (for total price use price * quantity expression)
     }
 };
 

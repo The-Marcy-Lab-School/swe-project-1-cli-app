@@ -6,14 +6,12 @@ class Item {
         this.quantity = quantity
         this.pricePerItem = pricePerItem
     }
-
     addItem() {
         console.log(`Added ${this.quantity} ${this.name} at $${this.pricePerItem} each to your shopping list!`)
     }
 
-    removeItem() {
-        // splice item out of itemList
-        // console.log(`Removed ${itemNumR} ${itemNameR} from your shopping list!`)
+    removeItem(num) {
+        this.quantity -= num
     }
 
     viewItem() {
