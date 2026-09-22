@@ -17,8 +17,11 @@ printed text and typed answers. It shows a menu, the user picks an option, the
 app does something, and the menu comes back until they choose to quit.
 
 The example we looked at in class was a task manager: add a task, mark one
-complete, delete them all, quit. Yours does not have to be a task manager. It
-has to be yours.
+complete, delete them all, quit. You can read that one in full in the
+[Task Manager Case Study](https://github.com/The-Marcy-Lab-School/swe-casestudy-1-cli-task-manager),
+and its investigation questions are worth working through first.
+
+Yours does not have to be a task manager. It has to be yours.
 
 ## AI Use on This Project
 
